@@ -5,7 +5,7 @@ Graph State Definition
 
 from typing import TypedDict, Optional, List, Any
 from datetime import datetime
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class AlpacaData(BaseModel):
@@ -32,6 +32,55 @@ class CritiqueResult(BaseModel):
     feedback: str = Field(description="具体的修改建议")
     issues: List[str] = Field(default_factory=list, description="发现的问题列表")
     improvement_guide: Optional[dict] = Field(default=None, description="结构化改进指南")
+
+    @field_validator("feedback", mode="before")
+    @classmethod
+    def normalize_feedback(cls, value: Any) -> str:
+        """Accept structured feedback returned by some chat models."""
+        if value is None:
+            return ""
+        if isinstance(value, str):
+            return value
+        if isinstance(value, (dict, list)):
+            import json
+            return json.dumps(value, ensure_ascii=False)
+        return str(value)
+
+    @field_validator("issues", mode="before")
+    @classmethod
+    def normalize_issues(cls, value: Any) -> List[str]:
+        """Normalize LLM issue objects into the string list used downstream."""
+        if value is None:
+            return []
+        if not isinstance(value, list):
+            value = [value]
+
+        normalized: List[str] = []
+        for item in value:
+            if isinstance(item, str):
+                text = item.strip()
+            elif isinstance(item, dict):
+                problem = item.get("problem") or item.get("issue") or item.get("description")
+                suggestion = item.get("suggestion") or item.get("recommendation") or item.get("fix")
+                location = item.get("location")
+                parts = []
+                if location:
+                    parts.append(f"位置：{location}")
+                if problem:
+                    parts.append(str(problem))
+                if suggestion:
+                    parts.append(f"建议：{suggestion}")
+                if parts:
+                    text = "；".join(parts)
+                else:
+                    import json
+                    text = json.dumps(item, ensure_ascii=False)
+            else:
+                text = str(item)
+
+            if text:
+                normalized.append(text)
+        return normalized
     
     def to_dict(self) -> dict:
         result = {
