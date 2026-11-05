@@ -1,0 +1,6 @@
+{"id":"string","feedback":"结论正确，但需要补充边界条件。","issues":["缺少边界条件"]}
+{"id":"issue_object","feedback":"需要定向修改。","issues":[{"location":"第2段","problem":"缺少复杂度分析","suggestion":"补充时间和空间复杂度"}]}
+{"id":"issue_list_mixed","feedback":{"summary":"需要修订","priority":"high"},"issues":["例子不足",{"location":"代码块","issue":"未处理空输入","fix":"增加空输入分支"}]}
+{"id":"single_issue_object","feedback":["格式正确","事实需要核验"],"issues":{"description":"来源不明确","recommendation":"补充可核验来源"}}
+{"id":"nested_fallback","feedback":{"analysis":{"quality":"medium"}},"issues":[{"custom":{"reason":"结构未知"}}]}
+{"id":"null_values","feedback":null,"issues":null}

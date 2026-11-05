@@ -17,6 +17,31 @@ LangGraph 多智能体数据合成与清洗系统的工程改进分支，用于�
 
 ---
 
+## 可重复评估
+
+仓库提供两层评估，分别验证结构兼容性和端到端任务表现：
+
+### 1. 反馈兼容性消融（无需 API）
+
+```bash
+python scripts/evaluate_feedback_compatibility.py
+```
+
+该测试使用 `evaluation/feedback_payloads.jsonl` 中的 6 种反馈结构，对比修复前的严格 schema 与当前归一化实现。当前结果为：严格 schema 成功 `1/6`，归一化实现成功 `6/6`。这项测试仅衡量反馈结构兼容性，不代表生成内容质量。
+
+### 2. 多类型端到端批量评估（需要 LLM 与 Tavily API）
+
+```bash
+python scripts/run_batch_evaluation.py \
+  --tasks evaluation/tasks.jsonl \
+  --output-dir evaluation/results \
+  --n-versions 2
+```
+
+任务集包含 CODE、REASONING、EXPLANATION、CREATIVE 和 FACTUAL 共 20 个任务。脚本逐条保存原始记录，并汇总工作流完成率、达标率、初始/最终得分、平均提升、迭代次数和运行耗时；结果输出为 `batch_records.jsonl`、`batch_summary.json` 和 `batch_summary.md`。在真实批量结果生成前，不在 README 中预设提升数字。
+
+---
+
 ## 📖 目录
 
 - [项目意义](#-项目意义)

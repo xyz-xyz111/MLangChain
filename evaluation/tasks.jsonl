@@ -1,0 +1,20 @@
+{"id":"code_01","type":"CODE","task":"实现一个带输入校验的 Python 二分查找函数，并说明时间复杂度。"}
+{"id":"code_02","type":"CODE","task":"编写 Python LRU 缓存，给出核心代码、边界条件和简单测试。"}
+{"id":"code_03","type":"CODE","task":"实现一个安全读取 JSONL 文件并统计有效记录数的 Python 函数。"}
+{"id":"code_04","type":"CODE","task":"用 Python 实现滑动窗口最大值，并解释算法选择。"}
+{"id":"reasoning_01","type":"REASONING","task":"有三只箱子分别标注苹果、橙子、混合，标签全部错误。只取一次水果，如何确定全部箱子内容？"}
+{"id":"reasoning_02","type":"REASONING","task":"比较批量梯度下降和随机梯度下降的收敛特性，并给出选择依据。"}
+{"id":"reasoning_03","type":"REASONING","task":"分析为什么数据泄漏会导致离线指标虚高，并设计排查步骤。"}
+{"id":"reasoning_04","type":"REASONING","task":"给出判断 A/B 测试结果是否可信的完整推理流程。"}
+{"id":"explanation_01","type":"EXPLANATION","task":"解释 Transformer 自注意力机制，并给出张量维度示例。"}
+{"id":"explanation_02","type":"EXPLANATION","task":"解释 LoRA 如何减少大模型微调参数量，并说明适用限制。"}
+{"id":"explanation_03","type":"EXPLANATION","task":"解释 RAG 中召回率与精确率的权衡，并给出优化方法。"}
+{"id":"explanation_04","type":"EXPLANATION","task":"解释 PPO 中 KL 惩罚的作用以及过大或过小的影响。"}
+{"id":"creative_01","type":"CREATIVE","task":"设计一个帮助大学生理解反向传播的互动教学活动。"}
+{"id":"creative_02","type":"CREATIVE","task":"为医学文献检索助手设计三种差异化产品功能。"}
+{"id":"creative_03","type":"CREATIVE","task":"设计一套用于评估 AI 回答可信度的用户界面流程。"}
+{"id":"creative_04","type":"CREATIVE","task":"提出一个兼顾隐私与个性化的校园学习助手方案。"}
+{"id":"factual_01","type":"FACTUAL","task":"说明 LoRA 论文提出的核心方法、适用对象和主要优势，并给出可核验来源。"}
+{"id":"factual_02","type":"FACTUAL","task":"介绍 PubMed RCT 数据集的用途与文本结构，并给出可核验来源。"}
+{"id":"factual_03","type":"FACTUAL","task":"说明 Transformer 论文的发布时间、主要作者和核心贡献，并给出可核验来源。"}
+{"id":"factual_04","type":"FACTUAL","task":"比较 Adam 与 AdamW 的关键差异，并给出可核验来源。"}

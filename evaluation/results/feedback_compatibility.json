@@ -1,0 +1,39 @@
+{
+  "total_payloads": 6,
+  "strict_success": 1,
+  "strict_failure_rate": 0.8333,
+  "normalized_success": 6,
+  "normalized_failure_rate": 0.0,
+  "rows": [
+    {
+      "id": "string",
+      "strict_ok": true,
+      "normalized_ok": true
+    },
+    {
+      "id": "issue_object",
+      "strict_ok": false,
+      "normalized_ok": true
+    },
+    {
+      "id": "issue_list_mixed",
+      "strict_ok": false,
+      "normalized_ok": true
+    },
+    {
+      "id": "single_issue_object",
+      "strict_ok": false,
+      "normalized_ok": true
+    },
+    {
+      "id": "nested_fallback",
+      "strict_ok": false,
+      "normalized_ok": true
+    },
+    {
+      "id": "null_values",
+      "strict_ok": false,
+      "normalized_ok": true
+    }
+  ]
+}
