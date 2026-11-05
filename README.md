@@ -1,6 +1,6 @@
 # 🚀 LangGraph 多智能体数据合成系统
 
-我使用 LangGraph 设计并实现了多智能体数据合成与清洗系统，用于自动生成、评审和迭代优化高质量指令微调数据。
+基于 LangGraph 设计并实现多智能体数据合成与清洗系统，用于自动生成、评审和迭代优化高质量指令微调数据。
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.0.50+-green.svg)](https://langchain-ai.github.io/langgraph/)
@@ -99,9 +99,9 @@ flowchart LR
 
 ---
 
-## 👨‍💻 我的主要工作
+## 👨‍💻 核心工程贡献
 
-我在现有多智能体工作流基础上，重点完成了端到端调试、状态兼容性修复和运行结果验证：
+围绕多智能体工作流，重点完成端到端调试、状态兼容性修复和运行结果验证：
 
 - 配置 GLM-4-Flash 与 Tavily，跑通 `Generator → CriticV2 → Refiner` 完整链路；
 - 定位 Critic 返回结构化 `issues` 与 Pydantic 状态模型类型不兼容的问题；
@@ -156,7 +156,7 @@ flowchart LR
 
 ## 🛠️ 问题与解决方案
 
-在项目开发过程中，我们识别并解决了四个核心问题：
+项目开发过程中识别并解决了四个核心问题：
 
 ### 问题 1: 回声室效应 (Echo Chamber Effect)
 
@@ -452,7 +452,7 @@ MLangChain/
 
 ## 📈 端到端运行结果
 
-我在 Windows、Python 3.11.9、GLM-4-Flash 和 Tavily 环境下完成了单任务端到端验证：
+在 Windows、Python 3.11.9、GLM-4-Flash 和 Tavily 环境下完成单任务端到端验证：
 
 | 指标 | 运行结果 |
 |------|---------:|
