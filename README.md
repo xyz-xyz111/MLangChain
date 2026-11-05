@@ -1,6 +1,6 @@
 # 🚀 LangGraph 多智能体数据合成系统
 
-基于 LangGraph 构建的工业级多智能体数据合成与清洗系统，用于自动化生成高质量的指令微调数据集。
+我使用 LangGraph 设计并实现了多智能体数据合成与清洗系统，用于自动生成、评审和迭代优化高质量指令微调数据。
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.0.50+-green.svg)](https://langchain-ai.github.io/langgraph/)
@@ -437,11 +437,11 @@ MLangChain/
 
 ---
 
-## 📈 端到端复现记录
+## 📈 端到端运行结果
 
-2026-11-04 在 Windows、Python 3.11.9、GLM-4-Flash 和 Tavily 环境下完成单任务端到端验证：
+我在 Windows、Python 3.11.9、GLM-4-Flash 和 Tavily 环境下完成了单任务端到端验证：
 
-| 指标 | 实测结果 |
+| 指标 | 运行结果 |
 |------|---------:|
 | 任务状态 | 成功 |
 | 最终质量评分 | 9.5 / 10 |
