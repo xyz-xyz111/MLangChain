@@ -1,10 +1,19 @@
 # 🚀 LangGraph 多智能体数据合成系统
 
-基于 LangGraph 设计并实现多智能体数据合成与清洗系统，用于自动生成、评审和迭代优化高质量指令微调数据。
+LangGraph 多智能体数据合成与清洗系统的工程改进分支，用于自动生成、评审和迭代优化指令微调数据。
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-0.0.50+-green.svg)](https://langchain-ai.github.io/langgraph/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+---
+
+## 分支定位与贡献边界
+
+- **上游仓库：**[changQiangXia/MLangChain](https://github.com/changQiangXia/MLangChain)，提供多智能体工作流、动态评分、RAG 事实验证、Best-of-N 和复杂度评估等基础能力；
+- **本分支改进：**解决异构 LLM 结构化反馈与 Pydantic 状态模型不兼容的问题，补充 GLM-4-Flash 与 Tavily 环境下的端到端验证及结果说明；
+- **代码改动：**在 `src/state.py` 增加 `feedback` 与 `issues` 的输入归一化，兼容字符串、字典、列表和嵌套结构，并保留问题位置、原因与修改建议；
+- **验证结果：**修复后工作流可连续执行至 Refiner；代表性任务经过 2 轮优化达到 `9.5/10`，10 条事实全部通过验证，0 条矛盾。
 
 ---
 
@@ -99,15 +108,15 @@ flowchart LR
 
 ---
 
-## 👨‍💻 核心工程贡献
+## 👨‍💻 本分支工程改进
 
-围绕多智能体工作流，重点完成端到端调试、状态兼容性修复和运行结果验证：
+围绕多智能体工作流，完成端到端调试、状态兼容性修复和运行结果验证：
 
 - 配置 GLM-4-Flash 与 Tavily，跑通 `Generator → CriticV2 → Refiner` 完整链路；
 - 定位 Critic 返回结构化 `issues` 与 Pydantic 状态模型类型不兼容的问题；
 - 在 `src/state.py` 实现反馈归一化，统一处理字符串、字典和嵌套结构；
 - 保留 `location/problem/suggestion` 信息，使 Refiner 能继续执行定向修改；
-- 完成单元测试、任务感知评分测试和真实任务验证；
+- 完成单元测试、任务感知评分测试和端到端任务验证；
 - 最终任务经过 2 轮迭代达到 `9.5/10`，10 条事实全部通过验证。
 
 ---
